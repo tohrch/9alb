@@ -1,0 +1,76 @@
+/* General body styles */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ff85b5; /* Candy Pink Background */
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+/* Center the content (text and heart) */
+.content {
+    text-align: center;
+    color: palevioletred;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Text Styling */
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 30px; /* Space between text and heart */
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Heart image container */
+.heart {
+    display: inline-block;
+    animation: heartbeat 1.5s ease-in-out infinite, shine 1s ease-in-out infinite;
+}
+
+/* Heartbeat animation */
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1); /* Heart returns to normal size */
+    }
+    50% {
+        transform: scale(1.8); /* Heart grows at 50% of the animation */
+    }
+}
+
+/* Shine animation (glow effect) */
+@keyframes shine {
+    0% {
+        box-shadow: 0 0 10px rgba(211, 81, 81, 0);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(161, 48, 48, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(212, 66, 66, 0);
+    }
+}
+
+/* Fade-in effect for the text */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Ensure the heart image doesn't stretch */
+.heart-image {
+    width: 250px; /* Adjust size */
+    height: 250px; /* Adjust size */
+    object-fit: cover;
+}
